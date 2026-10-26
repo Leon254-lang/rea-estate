@@ -212,4 +212,16 @@
       });
     }
   }
+
+  document.querySelectorAll("[data-mailto-form]").forEach((form) => {
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const values = new FormData(form);
+      const details = Array.from(values.entries())
+        .map(([label, value]) => `${label}: ${String(value).trim()}`)
+        .join("\n");
+      const subject = form.dataset.subject || "Website inquiry";
+      window.location.href = `mailto:hello@telecomestate.co.ke?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(details)}`;
+    });
+  });
 })();

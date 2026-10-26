@@ -1898,6 +1898,131 @@ section,
   margin-bottom: 10px;
 }
 
+.lead-form,
+.report-period-panel,
+.area-guide-card,
+.market-metric {
+  padding: 24px;
+  background: var(--surface-color);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+  border-radius: 8px;
+}
+
+.lead-form .form-label {
+  font-weight: 600;
+}
+
+.recruiting-list li {
+  margin-bottom: 12px;
+}
+
+.recruiting-list i {
+  margin-right: 8px;
+  color: var(--secondary-color);
+}
+
+.report-period-panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.report-status,
+.area-tag {
+  display: inline-block;
+  padding: 6px 10px;
+  color: var(--accent-color);
+  background: color-mix(in srgb, var(--accent-color), white 93%);
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.market-metric {
+  height: 100%;
+}
+
+.market-metric > span,
+.market-metric > strong {
+  display: block;
+}
+
+.market-metric > span {
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+.market-metric > strong {
+  color: var(--accent-color);
+  font-size: 20px;
+}
+
+.market-metric p {
+  margin: 8px 0 0;
+  font-size: 13px;
+}
+
+.report-chart-placeholder {
+  display: grid;
+  min-height: 220px;
+  place-items: center;
+  padding: 32px;
+  text-align: center;
+  background: repeating-linear-gradient(0deg, var(--surface-color), var(--surface-color) 48px, color-mix(in srgb, var(--default-color), white 94%) 49px, var(--surface-color) 50px);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+  border-radius: 8px;
+}
+
+.report-chart-placeholder > div {
+  max-width: 620px;
+  padding: 22px;
+  background: var(--surface-color);
+  border-radius: 8px;
+}
+
+.report-chart-placeholder > div > i {
+  color: var(--accent-color);
+  font-size: 32px;
+}
+
+.market-data-table caption {
+  color: var(--heading-color);
+  font-family: var(--heading-font);
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.area-guide-card {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.area-guide-card h2 {
+  margin: 14px 0 10px;
+  font-size: 24px;
+}
+
+.area-guide-card dl {
+  margin: 20px 0;
+  padding-top: 14px;
+  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+}
+
+.area-guide-card dt {
+  margin-top: 10px;
+  font-size: 13px;
+}
+
+.area-guide-card dd {
+  margin: 2px 0 0;
+  color: color-mix(in srgb, var(--default-color), transparent 25%);
+  font-size: 13px;
+}
+
+.area-guide-card > a {
+  font-weight: 600;
+}
+
 .agent-profile-page [data-profile-listings] .card {
   overflow: hidden;
 }
@@ -1911,11 +2036,20 @@ section,
   .broker-search-panel,
   .property-filter-panel,
   .agent-filter-panel,
-  .agent-lead-panel {
+  .agent-lead-panel,
+  .lead-form,
+  .report-period-panel,
+  .area-guide-card,
+  .market-metric {
     padding: 20px;
   }
 
   .property-map iframe {
     height: 320px;
+  }
+
+  .report-period-panel {
+    align-items: flex-start;
+    flex-direction: column;
   }
 }
