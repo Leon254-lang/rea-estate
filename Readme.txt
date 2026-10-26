@@ -1,6 +1,6 @@
-Thanks for downloading this template!
+
 
 Template Name: EstateAgency
-Template URL: https://bootstrapmade.com/real-estate-agency-bootstrap-template/
-Author: BootstrapMade.com
-License: https://bootstrapmade.com/license/
+Template URL: https://
+Author: leon.jumao@gmail.com
+License: https://leon.com/licens
