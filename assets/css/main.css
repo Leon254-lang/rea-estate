@@ -1713,3 +1713,209 @@ section,
 .starter-section {
   /* Add your styles here */
 }
+
+/*--------------------------------------------------------------
+# Brokerage Search, Directory & Profile Pages
+--------------------------------------------------------------*/
+.broker-search {
+  padding-top: 0;
+}
+
+.broker-search-panel,
+.property-filter-panel,
+.agent-filter-panel,
+.agent-lead-panel,
+.profile-contact-card {
+  padding: 28px;
+  background: var(--surface-color);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+  border-radius: 8px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+}
+
+.eyebrow {
+  display: inline-block;
+  margin-bottom: 8px;
+  color: var(--accent-color);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.demo-label,
+.portfolio-note,
+.inventory-demo-note {
+  color: var(--default-color);
+  background: color-mix(in srgb, var(--accent-color), white 94%);
+}
+
+.demo-label {
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-size: 13px;
+}
+
+.inventory-demo-note,
+.portfolio-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px;
+  border-left: 3px solid var(--accent-color);
+  border-radius: 4px;
+}
+
+.inventory-demo-note > i,
+.portfolio-note > i {
+  color: var(--accent-color);
+}
+
+.inventory-demo-note strong,
+.inventory-demo-note span {
+  display: block;
+}
+
+.inventory-demo-note span {
+  margin-top: 3px;
+  font-size: 14px;
+}
+
+.search-chip {
+  padding: 6px 12px;
+  color: var(--default-color);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 80%);
+  border-radius: 999px;
+  font-size: 14px;
+}
+
+.search-chip:hover {
+  color: var(--contrast-color);
+  background: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.market-stat {
+  display: block;
+  color: var(--accent-color);
+  font-family: var(--heading-font);
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.market-proof span {
+  display: block;
+  margin-top: 4px;
+  font-size: 14px;
+}
+
+.branch-card {
+  display: block;
+  height: 100%;
+  padding: 24px;
+  color: var(--default-color);
+  background: var(--surface-color);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.branch-card:hover {
+  border-color: var(--accent-color);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transform: translateY(-3px);
+}
+
+.branch-card > i {
+  color: var(--accent-color);
+  font-size: 24px;
+}
+
+.branch-card h3 {
+  margin: 12px 0 8px;
+  font-size: 20px;
+}
+
+.branch-card span {
+  font-size: 13px;
+}
+
+.property-filter-panel .form-label,
+.agent-filter-panel .form-label,
+.agent-lead-panel .form-label {
+  font-weight: 600;
+}
+
+.listing-badge {
+  display: inline-block;
+  margin: 0 0 8px;
+  padding: 4px 8px;
+  color: var(--accent-color);
+  background: color-mix(in srgb, var(--accent-color), white 93%);
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.property-map iframe {
+  display: block;
+  width: 100%;
+  height: 420px;
+  border: 0;
+  border-radius: 8px;
+}
+
+#property-map[hidden],
+[data-property-card][hidden],
+[data-agent-card][hidden],
+[data-agent-profile][hidden],
+[data-profile-not-found][hidden],
+#no-property-results[hidden],
+#no-agent-results[hidden] {
+  display: none !important;
+}
+
+.agents .member .pic {
+  margin-bottom: 0;
+}
+
+.agents .member .member-info {
+  position: relative;
+  inset: auto;
+  min-height: 245px;
+}
+
+.agents .member .member-info p {
+  margin: 10px 0;
+  font-size: 13px;
+}
+
+.profile-contact-card {
+  padding: 22px;
+}
+
+.profile-contact-card p {
+  margin-bottom: 10px;
+}
+
+.agent-profile-page [data-profile-listings] .card {
+  overflow: hidden;
+}
+
+.agent-profile-page [data-profile-listings] .card img {
+  height: 190px;
+  object-fit: cover;
+}
+
+@media (max-width: 767px) {
+  .broker-search-panel,
+  .property-filter-panel,
+  .agent-filter-panel,
+  .agent-lead-panel {
+    padding: 20px;
+  }
+
+  .property-map iframe {
+    height: 320px;
+  }
+}

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Property Consultant - Telecom Estate Agency</title>
+  <meta name="description" content="Meet a Telecom Estate Agency property consultant serving Nairobi, Kenya.">
+  <meta name="keywords" content="Nairobi property consultant, real estate agent">
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@400;500;600;700&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/css/main.css" rel="stylesheet">
+</head>
+
+<body class="agent-profile-page">
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center"><h1 class="sitename">Telecom Estate<span>Agency</span></h1></a>
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Our Services</a></li>
+          <li><a href="properties.html">Properties</a></li>
+          <li><a href="agents.html" class="active">Consultants</a></li>
+          <li class="dropdown"><a href="#"><span>Resources</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul><li><a href="blog.html">Property Insights</a></li><li><a href="faq.html">Frequently Asked Questions</a></li></ul>
+          </li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="page-title" data-aos="fade">
+      <div class="heading">
+        <div class="container">
+          <div class="row d-flex justify-content-center text-center">
+            <div class="col-lg-8">
+              <h1 data-profile-name>Property Consultant</h1>
+              <p class="mb-0" data-profile-role>Local property guidance across Nairobi.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav class="breadcrumbs"><div class="container"><ol><li><a href="index.html">Home</a></li><li><a href="agents.html">Consultants</a></li><li class="current" data-profile-crumb>Profile</li></ol></div></nav>
+    </div>
+
+    <section class="section">
+      <div class="container" data-agent-profile>
+        <div class="inventory-demo-note mb-4">
+          <i class="bi bi-info-circle"></i>
+          <div><strong>Sample agent profile</strong><span>Profile information and portfolio listings are demonstration content.</span></div>
+        </div>
+        <div class="row gy-4 align-items-start">
+          <div class="col-lg-4">
+            <img data-profile-image src="assets/img/team/team-1.jpg" class="img-fluid rounded" alt="Property consultant">
+            <div class="profile-contact-card mt-3">
+              <h2 class="h4" data-profile-name>Property Consultant</h2>
+              <p data-profile-role></p>
+              <p><strong>Service areas:</strong> <span data-profile-areas></span></p>
+              <p><strong>Languages:</strong> <span data-profile-languages></span></p>
+              <p><strong>Specialties:</strong> <span data-profile-specialties></span></p>
+              <a class="btn btn-danger w-100" href="#agent-contact">Contact this consultant</a>
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <h2>About <span data-profile-first-name>our consultant</span></h2>
+            <p data-profile-bio></p>
+            <div class="portfolio-note mb-4"><i class="bi bi-info-circle"></i> Active listings and past sales shown below are sample portfolio entries, not verified transactions.</div>
+            <h2 class="h3">Current listings</h2>
+            <div class="row gy-3 mb-4" data-profile-listings></div>
+            <h2 class="h3">Selected past sales</h2>
+            <ul data-profile-sales></ul>
+          </div>
+        </div>
+
+        <div id="agent-contact" class="agent-lead-panel mt-5">
+          <div class="row gy-4">
+            <div class="col-lg-5">
+              <h2 class="h3">Start a conversation</h2>
+              <p>Send a property question and include the listing or neighborhood you are interested in.</p>
+              <p class="small mb-0">Demo routing uses the agency inbox and labels your message for this consultant. Direct agent routing requires each agent's verified email or a connected CRM.</p>
+            </div>
+            <div class="col-lg-7">
+              <form id="agent-lead-form">
+                <div class="row gy-3">
+                  <div class="col-md-6"><label class="form-label" for="lead-name">Your name</label><input class="form-control" id="lead-name" name="name" autocomplete="name" required></div>
+                  <div class="col-md-6"><label class="form-label" for="lead-email">Email address</label><input class="form-control" id="lead-email" name="email" type="email" autocomplete="email" required></div>
+                  <div class="col-12"><label class="form-label" for="lead-message">How can the consultant help?</label><textarea class="form-control" id="lead-message" name="message" rows="4" required></textarea></div>
+                  <div class="col-12"><button class="btn btn-danger" type="submit">Prepare email to our team</button></div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container text-center py-5" data-profile-not-found hidden>
+        <h2>Consultant profile not found</h2>
+        <p>Select a consultant from our directory to view their sample profile.</p>
+        <a class="btn btn-danger" href="agents.html">Browse consultants</a>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer" class="footer light-background">
+    <div class="container"><div class="row gy-3">
+      <div class="col-lg-4 col-md-6 d-flex"><i class="bi bi-geo-alt icon"></i><div class="address"><h4>Address</h4><p>Kilimani, Nairobi</p><p>Nairobi, Kenya</p></div></div>
+      <div class="col-lg-4 col-md-6 d-flex"><i class="bi bi-telephone icon"></i><div><h4>Contact</h4><p><strong>Phone:</strong> +254 712 345 678<br><strong>Email:</strong> hello@telecomestate.co.ke</p></div></div>
+      <div class="col-lg-4 col-md-6"><h4>Explore</h4><p><a href="properties.html">Properties</a> · <a href="agents.html">Consultants</a> · <a href="contact.html">Contact</a></p></div>
+    </div></div>
+    <div class="container copyright text-center mt-4"><p>© <strong class="px-1 sitename">Telecom Estate Agency</strong> All Rights Reserved</p></div>
+  </footer>
+
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center" aria-label="Scroll to top"><i class="bi bi-arrow-up-short"></i></a>
+  <div id="preloader"></div>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/brokerage.js"></script>
+</body>
+
+</html>

@@ -47,21 +47,10 @@
           <li><a href="services.html">Our Services</a></li>
           <li><a href="properties.html">Properties</a></li>
           <li><a href="agents.html" class="active">Senior Property Consultants</a></li>
-          <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li class="dropdown"><a href="#"><span>Resources</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li><a href="#">Dropdown 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Dropdown 2</a></li>
-              <li><a href="#">Dropdown 3</a></li>
-              <li><a href="#">Dropdown 4</a></li>
+              <li><a href="blog.html">Property Insights</a></li>
+              <li><a href="faq.html">Frequently Asked Questions</a></li>
             </ul>
           </li>
           <li><a href="contact.html">Contact</a></li>
@@ -81,7 +70,7 @@
           <div class="row d-flex justify-content-center text-center">
             <div class="col-lg-8">
               <h1>Senior Property Consultants</h1>
-              <p class="mb-0">Discover exceptional homes and investment opportunities throughout Nairobi, from vibrant urban neighborhoods to peaceful residential areas.</p>
+              <p class="mb-0">Find a Nairobi property consultant by neighborhood expertise, languages, and transaction specialty.</p>
             </div>
           </div>
         </div>
@@ -96,61 +85,90 @@
       </nav>
     </div><!-- End Page Title -->
 
-    <!-- Senior Property Consultants Section -->
+    <!-- Agent Directory Section -->
     <section id="agents" class="agents section">
 
       <div class="container">
 
-        <div class="row gy-5">
+        <div class="inventory-demo-note mb-4">
+          <i class="bi bi-info-circle"></i>
+          <div><strong>Sample consultant directory</strong><span>Consultant profiles and specialties are demonstration content. Confirm real staff details before publishing.</span></div>
+        </div>
+        <div class="agent-filter-panel mb-4">
+          <div class="row g-3 align-items-end">
+            <div class="col-lg-4 col-md-6">
+              <label for="agent-search" class="form-label">Search consultants</label>
+              <input id="agent-search" class="form-control" type="search" placeholder="Name or neighborhood">
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <label for="agent-area-filter" class="form-label">Neighborhood expertise</label>
+              <select id="agent-area-filter" class="form-select"><option value="">All neighborhoods</option><option value="Kilimani">Kilimani</option><option value="Westlands">Westlands</option><option value="Karen">Karen</option><option value="Lavington">Lavington</option><option value="Riverside">Riverside</option></select>
+            </div>
+            <div class="col-lg-2 col-md-6">
+              <label for="agent-language-filter" class="form-label">Language</label>
+              <select id="agent-language-filter" class="form-select"><option value="">Any language</option><option value="English">English</option><option value="Swahili">Swahili</option><option value="French">French</option></select>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <label for="agent-specialty-filter" class="form-label">Specialty</label>
+              <select id="agent-specialty-filter" class="form-select"><option value="">Any specialty</option><option value="residential">Residential</option><option value="rentals">Rentals</option><option value="luxury">Luxury</option><option value="commercial">Commercial</option><option value="relocation">Relocation</option></select>
+            </div>
+          </div>
+        </div>
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+        <p id="agent-result-count" class="mb-3" aria-live="polite">Showing sample consultants</p>
+        <div class="row gy-5" id="agent-directory">
+
+          <div class="col-lg-4 col-md-6 agent-result" data-agent-card data-name="Walter White" data-areas="Westlands Kilimani Riverside" data-languages="English Swahili" data-specialties="luxury commercial residential" data-aos="fade-up" data-aos-delay="100">
             <div class="member">
-              <div class="pic"><img src="assets/img/team/team-1.jpg" class="img-fluid" alt=""></div>
+              <div class="pic"><img src="assets/img/team/team-1.jpg" class="img-fluid" alt="Walter White, property consultant"></div>
               <div class="member-info">
                 <h4>Walter White</h4>
-                <span>Chief Executive Officer</span>
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
+                <span>Sales &amp; Investment Consultant</span>
+                <p>Westlands · Kilimani · Riverside<br>English · Swahili</p>
+                <span>Luxury · Commercial · Residential</span>
+                <a class="btn btn-sm btn-outline-danger mt-2" href="agent-profile.html?agent=walter-white">View profile</a>
               </div>
             </div>
           </div><!-- End Team Member -->
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-lg-4 col-md-6 agent-result" data-agent-card data-name="Sarah Jhonson" data-areas="Kilimani Lavington Karen" data-languages="English Swahili French" data-specialties="rentals residential relocation" data-aos="fade-up" data-aos-delay="200">
             <div class="member">
-              <div class="pic"><img src="assets/img/team/team-2.jpg" class="img-fluid" alt=""></div>
+              <div class="pic"><img src="assets/img/team/team-2.jpg" class="img-fluid" alt="Sarah Jhonson, property consultant"></div>
               <div class="member-info">
                 <h4>Sarah Jhonson</h4>
-                <span>Rent Manager</span>
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
+                <span>Rental &amp; Relocation Consultant</span>
+                <p>Kilimani · Lavington · Karen<br>English · Swahili · French</p>
+                <span>Rentals · Residential · Relocation</span>
+                <a class="btn btn-sm btn-outline-danger mt-2" href="agent-profile.html?agent=sarah-jhonson">View profile</a>
               </div>
             </div>
           </div><!-- End Team Member -->
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+          <div class="col-lg-4 col-md-6 agent-result" data-agent-card data-name="William Anderson" data-areas="Karen Westlands Lavington" data-languages="English Swahili" data-specialties="commercial luxury residential" data-aos="fade-up" data-aos-delay="300">
             <div class="member">
-              <div class="pic"><img src="assets/img/team/team-3.jpg" class="img-fluid" alt=""></div>
+              <div class="pic"><img src="assets/img/team/team-3.jpg" class="img-fluid" alt="William Anderson, property consultant"></div>
               <div class="member-info">
                 <h4>William Anderson</h4>
-                <span>Sale manager<br></span>
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
+                <span>Sales &amp; Commercial Consultant</span>
+                <p>Karen · Westlands · Lavington<br>English · Swahili</p>
+                <span>Commercial · Luxury · Residential</span>
+                <a class="btn btn-sm btn-outline-danger mt-2" href="agent-profile.html?agent=william-anderson">View profile</a>
               </div>
             </div>
           </div><!-- End Team Member -->
 
+        </div>
+        <p id="no-agent-results" class="text-center py-4" hidden>No consultants match those filters.</p>
+
+        <div class="section-title mt-5" data-aos="fade-up">
+          <h2>Local service areas</h2>
+          <p>Our consultants serve clients across Nairobi. These are neighborhood service areas, not separate staffed offices.</p>
+        </div>
+        <div class="row gy-3">
+          <div class="col-md-6 col-lg-3"><a class="branch-card" href="properties.html?search=Kilimani"><i class="bi bi-geo-alt"></i><h3>Kilimani</h3><span>View neighborhood homes <i class="bi bi-arrow-right"></i></span></a></div>
+          <div class="col-md-6 col-lg-3"><a class="branch-card" href="properties.html?search=Westlands"><i class="bi bi-geo-alt"></i><h3>Westlands</h3><span>View neighborhood homes <i class="bi bi-arrow-right"></i></span></a></div>
+          <div class="col-md-6 col-lg-3"><a class="branch-card" href="properties.html?search=Karen"><i class="bi bi-geo-alt"></i><h3>Karen</h3><span>View neighborhood homes <i class="bi bi-arrow-right"></i></span></a></div>
+          <div class="col-md-6 col-lg-3"><a class="branch-card" href="properties.html?search=Lavington"><i class="bi bi-geo-alt"></i><h3>Lavington</h3><span>View neighborhood homes <i class="bi bi-arrow-right"></i></span></a></div>
         </div>
 
       </div>
@@ -228,6 +246,7 @@
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/js/brokerage.js"></script>
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>

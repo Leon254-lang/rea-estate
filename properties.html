@@ -47,21 +47,10 @@
           <li><a href="services.html">Our Services</a></li>
           <li><a href="properties.html" class="active">Properties</a></li>
           <li><a href="agents.html">Senior Property Consultants</a></li>
-          <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li class="dropdown"><a href="#"><span>Resources</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li><a href="#">Dropdown 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Dropdown 2</a></li>
-              <li><a href="#">Dropdown 3</a></li>
-              <li><a href="#">Dropdown 4</a></li>
+              <li><a href="blog.html">Property Insights</a></li>
+              <li><a href="faq.html">Frequently Asked Questions</a></li>
             </ul>
           </li>
           <li><a href="contact.html">Contact</a></li>
@@ -81,7 +70,7 @@
           <div class="row d-flex justify-content-center text-center">
             <div class="col-lg-8">
               <h1>Properties</h1>
-              <p class="mb-0">Discover exceptional homes and investment opportunities throughout Nairobi, from vibrant urban neighborhoods to peaceful residential areas.</p>
+              <p class="mb-0">Search our sample Nairobi inventory, narrow by area and price, and preview the neighborhood map.</p>
             </div>
           </div>
         </div>
@@ -101,12 +90,55 @@
 
       <div class="container">
 
-        <div class="row gy-4">
+        <div class="inventory-demo-note mb-4">
+          <i class="bi bi-info-circle"></i>
+          <div><strong>Demonstration inventory</strong><span>Sample listings only; no live MLS/IDX, ZIP, or school catchment data is connected.</span></div>
+        </div>
+        <form id="property-filters" class="property-filter-panel mb-4">
+          <div class="row g-3 align-items-end">
+            <div class="col-lg-4 col-md-6">
+              <label class="form-label" for="listing-search">City, neighborhood, or consultant</label>
+              <input class="form-control" id="listing-search" name="search" type="search" placeholder="e.g. Kilimani or consultant name">
+            </div>
+            <div class="col-lg-2 col-md-6">
+              <label class="form-label" for="listing-type">Listing type</label>
+              <select class="form-select" id="listing-type"><option value="">Any type</option><option value="rent">For rent</option><option value="sale">For sale</option></select>
+            </div>
+            <div class="col-lg-2 col-md-6">
+              <label class="form-label" for="price-min">Min. price (KSh)</label>
+              <input class="form-control" id="price-min" type="number" min="0" inputmode="numeric" placeholder="No minimum">
+            </div>
+            <div class="col-lg-2 col-md-6">
+              <label class="form-label" for="price-max">Max. price (KSh)</label>
+              <input class="form-control" id="price-max" type="number" min="0" inputmode="numeric" placeholder="No maximum">
+            </div>
+            <div class="col-lg-2 col-md-6 d-grid">
+              <button class="btn btn-danger" type="reset">Clear filters</button>
+            </div>
+          </div>
+          <div class="d-flex flex-wrap gap-4 mt-3">
+            <label class="form-check-label"><input class="form-check-input me-1" id="pending-only" type="checkbox"> Pending</label>
+            <label class="form-check-label"><input class="form-check-input me-1" id="price-drop-only" type="checkbox"> Price drops</label>
+            <label class="form-check-label"><input class="form-check-input me-1" id="open-house-only" type="checkbox"> Open houses</label>
+          </div>
+        </form>
 
-          <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="inventory-toolbar d-flex flex-wrap justify-content-between align-items-center gap-3 mb-3">
+          <p class="mb-0" id="property-result-count" aria-live="polite">Showing sample listings</p>
+          <button class="btn btn-outline-danger" id="toggle-property-map" type="button" aria-expanded="false" aria-controls="property-map"><i class="bi bi-map"></i> Show neighborhood map</button>
+        </div>
+        <div id="property-map" class="property-map mb-4" hidden>
+          <iframe title="Interactive OpenStreetMap view of Nairobi" src="https://www.openstreetmap.org/export/embed.html?bbox=36.72%2C-1.36%2C36.94%2C-1.20&amp;layer=mapnik&amp;marker=-1.2921%2C36.8219" loading="lazy"></iframe>
+          <p class="small mt-2 mb-0">Interactive Nairobi overview map. Map pins are not connected to sample listing coordinates.</p>
+        </div>
+
+        <div class="row gy-4" id="property-listings">
+
+          <div class="col-xl-4 col-md-6 property-result" data-property-card data-neighborhood="Kilimani" data-type="rent" data-price="120000" data-status="active" data-price-drop="false" data-open-house="true" data-agent="Sarah Jhonson" data-school-area="Kilimani Nairobi" data-aos="fade-up" data-aos-delay="100">
             <div class="card">
-              <img src="assets/img/properties/property-1.jpg" alt="" class="img-fluid">
+              <img src="assets/img/properties/property-1.jpg" alt="Home in Kilimani" class="img-fluid">
               <div class="card-body">
+                <span class="listing-badge">Open house</span>
                 <span class="sale-rent">Rent | KSh 120,000</span>
                 <h3><a href="property-single.html" class="stretched-link">204 Mount Kilimani Heights</a></h3>
                 <div class="card-content d-flex flex-column justify-content-center text-center">
@@ -127,10 +159,11 @@
             </div>
           </div><!-- End Property Item -->
 
-          <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-xl-4 col-md-6 property-result" data-property-card data-neighborhood="Westlands" data-type="sale" data-price="3500000" data-status="pending" data-price-drop="true" data-open-house="false" data-agent="Walter White" data-school-area="Westlands Nairobi" data-aos="fade-up" data-aos-delay="200">
             <div class="card">
-              <img src="assets/img/properties/property-2.jpg" alt="" class="img-fluid">
+              <img src="assets/img/properties/property-2.jpg" alt="Residence in Westlands" class="img-fluid">
               <div class="card-body">
+                <span class="listing-badge">Pending · Price drop</span>
                 <span class="sale-rent">Sale | KSh 3,500,000</span>
                 <h3><a href="property-single.html" class="stretched-link">647 Westlands Avenue, Nairobi</a></h3>
                 <div class="card-content d-flex flex-column justify-content-center text-center">
@@ -151,10 +184,11 @@
             </div>
           </div><!-- End Property Item -->
 
-          <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+          <div class="col-xl-4 col-md-6 property-result" data-property-card data-neighborhood="Karen" data-type="sale" data-price="5800000" data-status="active" data-price-drop="false" data-open-house="true" data-agent="William Anderson" data-school-area="Karen Nairobi" data-aos="fade-up" data-aos-delay="300">
             <div class="card">
-              <img src="assets/img/properties/property-3.jpg" alt="" class="img-fluid">
+              <img src="assets/img/properties/property-3.jpg" alt="Property in Karen" class="img-fluid">
               <div class="card-body">
+                <span class="listing-badge">Open house</span>
                 <span class="sale-rent">Sale | KSh 5,800,000</span>
                 <h3><a href="property-single.html" class="stretched-link">711 Karen Drive, Nairobi</a></h3>
                 <div class="card-content d-flex flex-column justify-content-center text-center">
@@ -175,10 +209,11 @@
             </div>
           </div><!-- End Property Item -->
 
-          <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+          <div class="col-xl-4 col-md-6 property-result" data-property-card data-neighborhood="Lavington" data-type="rent" data-price="650000" data-status="active" data-price-drop="true" data-open-house="false" data-agent="Sarah Jhonson" data-school-area="Lavington Nairobi" data-aos="fade-up" data-aos-delay="400">
             <div class="card">
-              <img src="assets/img/properties/property-4.jpg" alt="" class="img-fluid">
+              <img src="assets/img/properties/property-4.jpg" alt="Home in Lavington" class="img-fluid">
               <div class="card-body">
+                <span class="listing-badge">Price drop</span>
                 <span class="sale-rent">Rent | KSh 650,000</span>
                 <h3><a href="property-single.html" class="stretched-link">117 Lavington Lane, Nairobi</a></h3>
                 <div class="card-content d-flex flex-column justify-content-center text-center">
@@ -199,10 +234,11 @@
             </div>
           </div><!-- End Property Item -->
 
-          <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+          <div class="col-xl-4 col-md-6 property-result" data-property-card data-neighborhood="Kilimani" data-type="rent" data-price="300000" data-status="active" data-price-drop="false" data-open-house="false" data-agent="Walter White" data-school-area="Kilimani Nairobi" data-aos="fade-up" data-aos-delay="500">
             <div class="card">
-              <img src="assets/img/properties/property-5.jpg" alt="" class="img-fluid">
+              <img src="assets/img/properties/property-5.jpg" alt="Apartment in Kilimani" class="img-fluid">
               <div class="card-body">
+                <span class="listing-badge">Available</span>
                 <span class="sale-rent">Rent | KSh 300,000</span>
                 <h3><a href="property-single.html" class="stretched-link">678 Kilimani Crescent, Nairobi</a></h3>
                 <div class="card-content d-flex flex-column justify-content-center text-center">
@@ -223,10 +259,11 @@
             </div>
           </div><!-- End Property Item -->
 
-          <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+          <div class="col-xl-4 col-md-6 property-result" data-property-card data-neighborhood="Ngong Road" data-type="sale" data-price="6500000" data-status="pending" data-price-drop="false" data-open-house="false" data-agent="William Anderson" data-school-area="Ngong Road Nairobi" data-aos="fade-up" data-aos-delay="600">
             <div class="card">
-              <img src="assets/img/properties/property-6.jpg" alt="" class="img-fluid">
+              <img src="assets/img/properties/property-6.jpg" alt="Property near Ngong Road" class="img-fluid">
               <div class="card-body">
+                <span class="listing-badge">Pending</span>
                 <span class="sale-rent">Sale | KSh 6,500,000</span>
                 <h3><a href="property-single.html" class="stretched-link">974 Ngong Road, Nairobi</a></h3>
                 <div class="card-content d-flex flex-column justify-content-center text-center">
@@ -248,6 +285,8 @@
           </div><!-- End Property Item -->
 
         </div>
+        <p id="no-property-results" class="text-center py-5" hidden>No sample listings match those filters. Try broadening your search.</p>
+        <p class="text-center small mt-4 mb-0">Pending, price drop, and open-house labels are example states for demonstration purposes.</p>
 
       </div>
 
@@ -324,6 +363,7 @@
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/js/brokerage.js"></script>
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
